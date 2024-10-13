@@ -1,5 +1,4 @@
 import pygame
-from Algo import bresenham_line
 from Constant import walls,blue,white
 from Walls import Wall
 

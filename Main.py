@@ -7,10 +7,8 @@ from Player import Player
 from Ghost import Ghost
 from Block import Block
 from AnimatedPacman import Pacmanc
-Trollicon=pygame.image.load('images/Trollman.png')
-pygame.display.set_icon(Trollicon)
 
-#Add music
+    #Add music
 pygame.mixer.init()
 pygame.mixer.music.load('pacman.mp3')
 pygame.mixer.music.play(-1, 0.0)
@@ -146,7 +144,6 @@ def startGame():
               done=True
 
           if event.type == pygame.KEYDOWN:
-              print(f"Key pressed: {pygame.key.name(event.key)}")
               if event.key == pygame.K_LEFT:
                   Pacman.changespeed(-30,0)
               if event.key == pygame.K_RIGHT:
@@ -157,7 +154,6 @@ def startGame():
                   Pacman.changespeed(0,30)
 
           if event.type == pygame.KEYUP:
-              print(f"Key released: {pygame.key.name(event.key)}")
               if event.key == pygame.K_LEFT:
                   Pacman.changespeed(30,0)
               if event.key == pygame.K_RIGHT:
@@ -171,8 +167,6 @@ def startGame():
    
       # ALL GAME LOGIC SHOULD GO BELOW THIS COMMENT
       Pacman.update(wall_list,gate)
-      print(f"Pacman position: {Pacman.rect.topleft}")
-      print(f"Pacman image size: {Pacman.image.get_size()}")
 
       returned = Pinky.changespeed(Pinky_directions,False,p_turn,p_steps,pl)
       p_turn = returned[0]
